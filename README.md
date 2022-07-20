@@ -2,99 +2,99 @@ Laravel Currency - with bearer Authentication <br />
 
 API Usage: <br />
 1.  Login first <br />
-    POST to: http://localhost:8000/api/login<br />
-    example post param: <br />
-    email = agus.supriono@gmail.com<br />
-    password = agus123<br />
+&nbsp;&nbsp;&nbsp;&nbsp;POST to: http://localhost:8000/api/login<br />
+&nbsp;&nbsp;&nbsp;&nbsp;example post param: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;email = agus.supriono@gmail.com<br />
+&nbsp;&nbsp;&nbsp;&nbsp;password = agus123<br />
 <br />
-    example return param: <br />
-    {<br />
-    "success": true,<br />
-    "data": {<br />
-        "id": 1,<br />
-        "fullName": "Agus Supriono",<br />
-        "token": "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
-    },<br />
-    "message": "User signed in"<br />
-    }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;example return param: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"success": true,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"data": {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"fullName": "Agus Supriono",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"token": "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"message": "User signed in"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
  <br />
-    use token in data return value for bearer authentication<br />
+&nbsp;&nbsp;&nbsp;&nbsp;use token in data return value for bearer authentication<br />
 <br />
 2.  List Currencied<br />
-    GET to : http://localhost:8000/api/currencies<br />
-    TOKEN = "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;GET to : http://localhost:8000/api/currencies<br />
+&nbsp;&nbsp;&nbsp;&nbsp;TOKEN = "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
 <br />
-    example return param:<br />
-    {<br />
-    "success": true,<br />
-    "data": {<br />
-        "data": [<br />
-            {<br />
-                "code": "EUR",<br />
-                "name": "Euro"<br />
-            },<br />
-            {<br />
-                "code": "USD",<br />
-                "name": "US dollar"<br />
-            },<br />
-            {<br />
-                "code": "JPY",<br />
-                "name": "Japanese yen"<br />
-            },<br />
-            {<br />
-                "code": "IDR",<br />
-                "name": "Indonesia Rupiah"<br />
-            }<br />
-        ]<br />
-    },<br />
-    "message": "List Currency - Base EUR"<br />
-    }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;example return param:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"success": true,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"data": {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"data": [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "EUR",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Euro"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "USD",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "US dollar"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "JPY",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Japanese yen"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "IDR",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Indonesia Rupiah"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"message": "List Currency - Base EUR"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
 <br />
 3.  Get single currency code<br />
-    GET to : http://localhost:8000/api/currency/{code}<br />
-    example "USD" : http://localhost:8000/api/currency/USD<br />
-    TOKEN = "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;GET to : http://localhost:8000/api/currency/{code}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;example "USD" : http://localhost:8000/api/currency/USD<br />
+&nbsp;&nbsp;&nbsp;&nbsp;TOKEN = "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
 <br />
-    example return param:<br />
-    {<br />
-    "success": true,<br />
-    "data": {<br />
-        "data": [<br />
-            {<br />
-                "code": "USD",<br />
-                "name": "US dollar",<br />
-                "rate": 1.0245,<br />
-                "date": "2022-07-19"<br />
-            }<br />
-        ]<br />
-    },<br />
-    "message": "Currency Rate - Base EUR"<br />
-    }<br />
-    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;example return param:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"success": true,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"data": {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"data": [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "USD",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "US dollar",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"rate": 1.0245,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"date": "2022-07-19"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"message": "Currency Rate - Base EUR"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
 4.  Update or Create Currency<br />
-    POST to : http://localhost:8000/api/createUpdate<br />
-    TOKEN = "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
-    JSON Param = {<br />
-                    "code" : "IDR",<br />
-                    "name" : "Indonesia Rupiah",<br />
-                    "rate" : "15344.49",<br />
-                    "date" : "2022-07-19"<br />
-                }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;POST to : http://localhost:8000/api/createUpdate<br />
+&nbsp;&nbsp;&nbsp;&nbsp;TOKEN = "1|76dl6lLeXXiwz7tHh65URvnlh6LGh16SraQFfHsV"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;JSON Param = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code" : "IDR",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name" : "Indonesia Rupiah",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"rate" : "15344.49",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"date" : "2022-07-19"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
 <br />
-    example return param:<br />
-    {<br />
-    "success": true,<br />
-    "data": {<br />
-        "data": {<br />
-            "code": "IDR",<br />
-            "name": "Indonesia Rupiah",<br />
-            "rate": "15344.49",<br />
-            "date": "2022-07-19",<br />
-            "updated_at": "2022-07-20T10:26:47.000000Z",<br />
-            "created_at": "2022-07-20T10:26:47.000000Z",<br />
-            "id": 5<br />
-        }<br />
-    },<br />
-    "message": "Create or Update Rate"<br />
-    }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;example return param:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"success": true,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"data": {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"data": {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code": "IDR",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Indonesia Rupiah",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"rate": "15344.49",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"date": "2022-07-19",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"updated_at": "2022-07-20T10:26:47.000000Z",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2022-07-20T10:26:47.000000Z",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 5<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"message": "Create or Update Rate"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
 <br />
