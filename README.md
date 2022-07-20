@@ -1,7 +1,7 @@
-Laravel Currency - with bearer Authentication
+Laravel Currency - with bearer Authentication <br />
 
-API Usage:
-1.  Login first
+API Usage: <br />
+1.  Login first <br />
     POST to: http://localhost:8000/api/login
     example post param: email = agus.supriono@gmail.com
                         password = agus123
